@@ -5,8 +5,12 @@ import "../styles.css";
 export default function MoviesGrid(){
 
     const [movies, setMovies] = useState([]);
-
+    
+    useEffect(() => {
+        const m = ["a", "b", "c", "d"];
+        setMovies(m);
+    });
     return(
-        <div></div>
+        <div>{movies.length}</div>
     );
 };
