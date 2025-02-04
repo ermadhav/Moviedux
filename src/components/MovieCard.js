@@ -3,6 +3,9 @@ import "../styles.css";
 import MoviesGrid from "./MoviesGrid";
 
 export default function MovieCard({ movie }) {
+
+    
+
   const handleError = (e) => {
     e.target.src = "images/default.jpg";
   };
