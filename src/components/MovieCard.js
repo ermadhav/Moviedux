@@ -6,4 +6,3 @@ export default function MovieCard(){
         <div></div>
     );
 };
-
