@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "../styles.css";
+import MovieCard from "./MovieCard";
 
 
 export default function MoviesGrid(){
@@ -15,7 +16,7 @@ export default function MoviesGrid(){
         <div className="movies-grid">
             {
                 movies.map(movie => (
-                    
+                    <MovieCard movie={movie} key={movie.id}></MovieCard>
                 ))
             }
         </div>
