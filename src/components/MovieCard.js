@@ -12,12 +12,10 @@ export default function MovieCard({ movie }) {
     if(rating >= 8){
         return 'rating-good'
     }
-    if(rating >= 5 && rating <8){
-        return 'rating-average'
+    if(rating >= 5 && rating < 8){
+        return 'rating-ok'
     }
-    if(rating >= 0 && rating <5){
         return 'rating-bad'
-    }
   }
 
 
