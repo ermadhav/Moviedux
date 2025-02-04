@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles.css";
+import MoviesGrid from "./MoviesGrid";
 
 export default function MovieCard({movie}) {
   return (
