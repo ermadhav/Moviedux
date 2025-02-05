@@ -2,7 +2,7 @@ import "../styles.css";
 import MovieCard from "./MovieCard";
 import React, { useState } from "react";
 
-export default function MoviesGrid(movies) {
+export default function MoviesGrid({movies}) {
   
   const [searchTerm, setSearchTerm] = useState("");
   const [genre, setGenre] = useState("All Genre");
