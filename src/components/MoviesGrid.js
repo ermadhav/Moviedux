@@ -2,105 +2,67 @@ import "../styles.css";
 import MovieCard from "./MovieCard";
 import React, { useState } from "react";
 
-export default function MoviesGrid({ movies, watchlist, toggleWatchlist }) {
+const API_KEY = "15c25776"; // Replace with your OMDb API key
+
+export default function MoviesGrid({ watchlist, toggleWatchlist }) {
   const [searchTerm, setSearchTerm] = useState("");
-  const [genre, setGenre] = useState("All Genre");
-  const [rating, setRating] = useState("All");
+  const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(false); // Loading state
 
-  const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
+  const handleSearch = async () => {
+    if (!searchTerm.trim()) return;
+    
+    setLoading(true); // Show loading spinner
+    
+    try {
+      const response = await fetch(`https://www.omdbapi.com/?s=${searchTerm}&apikey=${API_KEY}`);
+      const data = await response.json();
+
+      if (data.Response === "True") {
+        const detailedMovies = await Promise.all(
+          data.Search.map(async (movie) => {
+            const movieResponse = await fetch(`https://www.omdbapi.com/?i=${movie.imdbID}&apikey=${API_KEY}`);
+            return movieResponse.json();
+          })
+        );
+        setMovies(detailedMovies);
+      } else {
+        setMovies([]);
+      }
+    } catch (error) {
+      console.error("Error fetching movies:", error);
+    }
+
+    setLoading(false); // Hide loading spinner
   };
 
-  const handleGenreChange = (e) => {
-    setGenre(e.target.value);
-  };
-
-  const handleRatingChange = (e) => {
-    setRating(e.target.value);
-  };
-
-  const matchesGenre = (movie, genre) => {
-    return (
-      genre === "All Genre" ||
-      movie.genre.toLowerCase().includes(genre.toLowerCase())
-    );
-  };
-
-  const matchesSearchTerm = (movie, searchTerm) => {
-    return movie.title.toLowerCase().includes(searchTerm.toLowerCase());
-  };
-
-  const matchesRating = (movie, rating) => {
-    switch (rating) {
-      case "All":
-        return true;
-      case "Good":
-        return movie.rating >= 8;
-      case "Ok":
-        return movie.rating >= 5 && movie.rating < 8;
-      case "Bad":
-        return movie.rating < 5;
-      default:
-        return false;
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
     }
   };
 
-  const filteredMovies = movies.filter(
-    (movie) =>
-      matchesGenre(movie, genre) &&
-      matchesRating(movie, rating) &&
-      matchesSearchTerm(movie, searchTerm)
-  );
-
   return (
-    <div>
-      <input
-        type="text"
-        className="search-input"
-        placeholder="Search movies..."
-        value={searchTerm}
-        onChange={handleSearchChange}
-      />
-
-      <div className="filter-bar">
-        <div className="filter-slot">
-          <label>Genre</label>
-          <select
-            className="filter-dropdown"
-            value={genre}
-            onChange={handleGenreChange}
-          >
-            <option>All Genre</option>
-            <option>Action</option>
-            <option>Drama</option>
-            <option>Fantasy</option>
-            <option>Horror</option>
-          </select>
-        </div>
-
-        <div className="filter-slot">
-          <label>Rating</label>
-          <select
-            className="filter-dropdown"
-            value={rating}
-            onChange={handleRatingChange}
-          >
-            <option>All</option>
-            <option>Good</option>
-            <option>Ok</option>
-            <option>Bad</option>
-          </select>
-        </div>
+    <div className="movies-container">
+      <div className="search-bar">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Search movies..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyDown={handleKeyDown} // Press Enter to search
+        />
+        <button className="search-button" onClick={handleSearch}>
+          🔍 Search
+        </button>
       </div>
 
+      {loading && <div className="loading-spinner"></div>} {/* Loading Spinner */}
+
       <div className="movies-grid">
-        {filteredMovies.map((movie) => (
-          <MovieCard
-            movie={movie}
-            key={movie.id}
-            toggleWatchlist={toggleWatchlist}
-            isWatchlisted={watchlist.includes(movie.id)}
-          />
+        {movies.map((movie) => (
+          <MovieCard key={movie.imdbID} movie={movie} toggleWatchlist={toggleWatchlist} isWatchlisted={watchlist.includes(movie.imdbID)} />
         ))}
       </div>
     </div>
