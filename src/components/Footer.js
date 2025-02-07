@@ -7,7 +7,8 @@ export default function Footer(){
     return(
         <footer className="footer">
             <p className="footer-text">
-            ©{currentYear} Moviedux, All rights reserved
+            {/* ©{currentYear} Moviedux, All rights reserved */}
+            Copyright © 2025 All rights reserved | This website is made with ❤️ by Madhav Tiwari
             </p>
         </footer>
     );
