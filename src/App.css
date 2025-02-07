@@ -148,3 +148,39 @@
   color: #2196f3;
   font-size: 14px;
 }
+.header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.logo {
+  width: 120px; /* Adjust logo size */
+  height: auto;
+}
+
+.app-subtitle {
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* 🔹 FOOTER STYLING */
+.footer {
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}
+
+.footer-text {
+  font-size: 14px;
+  margin: 0;
+}
