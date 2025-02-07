@@ -5,9 +5,7 @@ export default function Header() {
   return (
     <div className="header">
       <img className="logo" src="logo.png" alt="moviedux" />
-      <h2 className="app-subtitle">It's time for popcorn! Find Your next Movie here</h2>
+      <h2 className="app-subtitle">🍿 Find Your Next Movie Adventure!</h2>
     </div>
   );
 }
-
-
