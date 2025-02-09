@@ -29,7 +29,7 @@
 
 1. **Clone the repo**
    ```sh
-   git clone https://github.com/yourusername/MovieDux.git
+   git clone https://github.com/ermadhav/MovieDux.git
    cd MovieDux
    ```
 
@@ -44,7 +44,7 @@
    ```
 
 ## 🔗 Live Demo
-[Click here to try it out!](your-live-demo-link)
+[Click here to try it out!](https://moviedux-six.vercel.app/)
 
 ## 🤝 Contributing
 Have ideas to improve MovieDux? Feel free to fork, submit issues, or create pull requests!
