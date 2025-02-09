@@ -52,7 +52,7 @@
 Have ideas to improve MovieDux? Feel free to fork, submit issues, or create pull requests!
 
 ## 📩 Connect With Me
-🔗 **LinkedIn:** [your-linkedin-profile]  
+🔗 **LinkedIn:** https://www.linkedin.com/in/ermadhav/  
 🐦 **Twitter/X:** [your-twitter-handle]  
 📧 **Email:** contact.madhavtiwari@gmail.com
 
