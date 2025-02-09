@@ -20,7 +20,7 @@
 ## 📸 Preview
 
 [![MovieDux Demo](demo-thumbnail.png)](your-demo-video-link)  
-▶ **[Watch the Demo Video](your-demo-video-link)**
+▶ **[Watch the Demo Video](C:\Users\madha\OneDrive\Desktop\moviedux\Screen Recording 2025-02-08 012710.mp4)**
 
 ## 🚀 Installation & Setup
 
