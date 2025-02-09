@@ -17,10 +17,12 @@
 - **OMDb API** (Real-time movie data)
 - **CSS & Styled Components** (Enhanced UI/UX)
 
-## 📸 Preview
+## 📸 Preview  
 
-[![MovieDux Demo](demo-thumbnail.png)](your-demo-video-link)  
-▶ **[Watch the Demo Video](https://drive.google.com/file/d/1lKOBEfl6_0DAMOu4LF7_t8PokR_9z7cw/view?usp=sharing)**
+<a href="https://drive.google.com/file/d/1lKOBEfl6_0DAMOu4LF7_t8PokR_9z7cw/view?usp=sharing" target="_blank">  
+  <img src="demo-thumbnail.png" alt="MovieDux Demo" width="600">  
+</a>  
+
 
 ## 🚀 Installation & Setup
 
