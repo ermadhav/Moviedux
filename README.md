@@ -43,17 +43,12 @@
 ## 🔗 Live Demo
 [Click here to try it out!](your-live-demo-link)
 
-## 🎵 Background Music Suggestion for Showcase Video
-- **Energetic:** TheFatRat – Unity 🎮
-- **Cinematic:** Two Steps From Hell – Victory 🎞️
-- **Chill:** ODESZA – Bloom 🌊
-
 ## 🤝 Contributing
 Have ideas to improve MovieDux? Feel free to fork, submit issues, or create pull requests!
 
 ## 📩 Connect With Me
 🔗 **LinkedIn:** https://www.linkedin.com/in/ermadhav/  
-🐦 **Twitter/X:** [your-twitter-handle]  
+🐦 **Twitter/X:** https://x.com/MadhavT50928649  
 📧 **Email:** contact.madhavtiwari@gmail.com
 
 ---
